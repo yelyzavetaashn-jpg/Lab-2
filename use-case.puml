@@ -16,6 +16,7 @@ rectangle "Система бібліотеки відеоігор" {
     usecase "Додати гру до бібліотеки" as UC5
     usecase "Видалити гру з бібліотеки" as UC6
     usecase "Знайти гру в каталозі" as UC7
+    usecase "Відфільтрувати ігри за жанром" as UC8
 }
 
 Visitor --> UC1
@@ -26,5 +27,7 @@ RegisteredUser --> UC4
 RegisteredUser --> UC5
 RegisteredUser --> UC6
 UC5 ..> UC7 : <<include>>
+Visitor --> UC8
+UC8 ..> UC2 : <<extend>>
 
 @enduml
