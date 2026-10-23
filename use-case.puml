@@ -23,8 +23,8 @@ Visitor --> UC2
 Visitor --> UC3
 
 RegisteredUser --> UC4
+RegisteredUser --> UC5
+RegisteredUser --> UC6
 UC5 ..> UC7 : <<include>>
-UC5 ..> UC4 : <<extend>>
-UC6 ..> UC4 : <<extend>>
 
 @enduml
