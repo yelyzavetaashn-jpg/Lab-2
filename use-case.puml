@@ -1,0 +1,30 @@
+
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Відвідувач каталогу" as Visitor
+actor "Зареєстрований користувач" as RegisteredUser
+
+RegisteredUser --|> Visitor
+
+rectangle "Система бібліотеки відеоігор" {
+    usecase "Переглянути каталог" as UC1
+    usecase "Знайти гру" as UC2
+    usecase "Переглянути інформацію про гру" as UC3
+    usecase "Керувати особистою бібліотекою" as UC4
+    usecase "Додати гру до бібліотеки" as UC5
+    usecase "Видалити гру з бібліотеки" as UC6
+    usecase "Знайти гру в каталозі" as UC7
+}
+
+Visitor --> UC1
+Visitor --> UC2
+Visitor --> UC3
+
+RegisteredUser --> UC4
+UC5 ..> UC7 : <<include>>
+UC5 ..> UC4 : <<extend>>
+UC6 ..> UC4 : <<extend>>
+
+@enduml
